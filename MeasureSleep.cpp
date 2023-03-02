@@ -1,11 +1,10 @@
 #include <iostream>
 #include <windows.h>
 
-typedef NTSTATUS(CALLBACK* NTQUERYTIMERRESOLUTION) (
+typedef NTSTATUS(CALLBACK *NTQUERYTIMERRESOLUTION)(
     OUT PULONG MinimumResolution,
     OUT PULONG MaximumResolution,
-    OUT PULONG CurrentResolutionolution
-    );
+    OUT PULONG CurrentResolutionolution);
 
 int main() {
     ULONG MinimumResolution, MaximumResolution, CurrentResolution;
@@ -38,7 +37,7 @@ int main() {
         double delta_ms = delta_s * 1000;
 
         printf("Resolution: %lfms, Sleep(1) slept %lfms (delta: %lf)\n",
-            CurrentResolution / 10000.0, delta_ms, delta_ms - 1);
+               CurrentResolution / 10000.0, delta_ms, delta_ms - 1);
 
         Sleep(1000); // pause for a second between iterations
     }
