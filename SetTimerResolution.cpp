@@ -33,12 +33,12 @@ int main() {
 
     SetProcessInformation(GetCurrentProcess(), ProcessPowerThrottling, &PowerThrottling, sizeof(PowerThrottling));
 
-    if (NtQueryTimerResolution(&MinimumResolution, &MaximumResolution, &CurrentResolution) != 0) {
+    if (NtQueryTimerResolution(&MinimumResolution, &MaximumResolution, &CurrentResolution)) {
         printf("NtQueryTimerResolution failed");
         return 1;
     }
 
-    if (NtSetTimerResolution(MaximumResolution, true, &CurrentResolution) != 0) {
+    if (NtSetTimerResolution(MaximumResolution, true, &CurrentResolution)) {
         printf("NtSetTimerResolution failed");
         return 1;
     }

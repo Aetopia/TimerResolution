@@ -23,7 +23,7 @@ int main() {
 
     for (;;) {
         // get current resolution
-        if (NtQueryTimerResolution(&MinimumResolution, &MaximumResolution, &CurrentResolution) != 0) {
+        if (NtQueryTimerResolution(&MinimumResolution, &MaximumResolution, &CurrentResolution)) {
             printf("NtQueryTimerResolution failed");
             return 1;
         }
