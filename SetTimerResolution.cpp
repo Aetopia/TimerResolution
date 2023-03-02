@@ -12,6 +12,8 @@ typedef NTSTATUS(CALLBACK *NTSETTIMERRESOLUTION)(
     OUT PULONG CurrentResolutionolution);
 
 int main() {
+    // FreeConsole(); // hides console
+
     ULONG MinimumResolution, MaximumResolution, CurrentResolution;
     PROCESS_POWER_THROTTLING_STATE PowerThrottling;
 
